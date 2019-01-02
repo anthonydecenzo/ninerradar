@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HubController">
+   <children>
+      <AnchorPane layoutX="-180.0" layoutY="-137.0" prefHeight="554.0" prefWidth="917.0">
+         <children>
+            <ListView fx:id="deviceView" layoutX="185.0" layoutY="205.0" prefHeight="345.0" prefWidth="200.0" />
+            <Label layoutX="205.0" layoutY="187.0" text="Connected Devices:" />
+            <AnchorPane layoutX="393.0" layoutY="209.0" prefHeight="337.0" prefWidth="528.0">
+               <children>
+                  <TabPane layoutX="4.0" layoutY="-2.0" prefHeight="337.0" prefWidth="520.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab closable="false" text="Information">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-text-base-color: green;">
+                                 <children>
+                                    <TextField fx:id="txtMacAddress" editable="false" layoutX="14.0" layoutY="39.0" prefHeight="26.0" prefWidth="224.0" promptText="..." />
+                                    <Label layoutX="20.0" layoutY="21.0" text="MAC Address:" />
+                                    <Label layoutX="20.0" layoutY="83.0" text="IP Address:" />
+                                    <TextField fx:id="txtIpAddress" editable="false" layoutX="14.0" layoutY="101.0" prefHeight="26.0" prefWidth="227.0" promptText="..." />
+                                    <Label layoutX="20.0" layoutY="139.0" text="API Key:" />
+                                    <TextField fx:id="txtAPIKey" editable="false" layoutX="13.0" layoutY="157.0" prefHeight="26.0" prefWidth="229.0" promptText="..." />
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab closable="false" text="Manage">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button layoutX="439.0" layoutY="235.0" mnemonicParsing="false" onAction="#generateAPIKey" prefHeight="30.0" prefWidth="67.0" style="-fx-background-color: green;" text="Send" />
+                                    <Button layoutX="168.0" layoutY="14.0" mnemonicParsing="false" onAction="#generateAPIKey" prefHeight="32.0" prefWidth="140.0" style="-fx-background-color: green;" text="Restart Device" />
+                                    <TextField layoutX="14.0" layoutY="237.0" prefHeight="26.0" prefWidth="419.0" />
+                                    <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#generateAPIKey" prefHeight="32.0" prefWidth="140.0" style="-fx-background-color: green;" text="Update API Key" />
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
